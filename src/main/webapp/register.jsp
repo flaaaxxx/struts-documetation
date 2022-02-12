@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <s:head />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Register</title>
 </head>
