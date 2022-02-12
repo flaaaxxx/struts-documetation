@@ -10,6 +10,13 @@
 <h1>Welcome To Struts 2!</h1>
 <p><a href="<s:url action='hello'/>">Hello World</a></p>
 
+<h3>Rejestracja użytkownika</h3>
+<s:url action="registerInput" var="registerInputLinkPl">
+  <s:param name="request_locale">pl</s:param>
+</s:url>
+<p><s:a href="%{registerInputLinkPl}">Proszę się zarejestrować</s:a></p>
+
+
 <s:url action="hello" var="helloLink">
   <s:param name="userName">Bruce Phillips</s:param>
 </s:url>
@@ -23,23 +30,9 @@
   <s:submit value="Submit" />
 </s:form>
 
-<form id="hello" name="hello" action="/using-tags/hello.action;jsessionid=6233ot11na1mtshbr292hu1w" method="post">
-  <table class="wwFormTable">
-    <tr>
-      <td class="tdLabel"><label for="hello_userName" class="label">Your name:</label></td>
-      <td class="tdInput"><input type="text" name="userName" value="" id="hello_userName"/></td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <div class="formButton">
-          <input type="submit" value="Submit" id="hello_0"/>
-        </div>
-      </td>
-    </tr>
-  </table>
-</form>
-
-<p><a href="register.jsp">Please register</a> for our prize drawing.</p>
-
+<s:url action="registerInput" var="registerInputLink" />
+<p><s:a href="%{registerInputLink}">Please register</s:a> for our prize drawing.</p>
+<hr />
+<s:text name="contact" />
 </body>
 </html>
