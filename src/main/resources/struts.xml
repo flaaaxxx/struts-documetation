@@ -17,6 +17,10 @@
             <result name="success">/HelloWorld.jsp</result>
         </action>
 
+        <action name="register" class="com.example.demo.controller.Register" method="execute">
+            <result name="success">/thankyou.jsp</result>
+        </action>
+
     </package>
 
 </struts>
