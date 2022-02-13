@@ -10,6 +10,33 @@
 
     <package name="basicstruts2" extends="struts-default">
 
+        <interceptors>
+            <interceptor-stack name="appDefaultStack">
+                <interceptor-ref name="defaultStack">
+                    <param name="exception.logEnabled">true</param>
+                    <param name="exception.logLevel">ERROR</param>
+                </interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+
+        <default-interceptor-ref name="appDefaultStack" />
+
+        <global-results>
+            <result name="securityerror">/securityerror.jsp</result>
+            <result name="error">/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="com.example.demo.exception.SecurityBreachException" result="securityerror" />
+            <exception-mapping exception="java.lang.Exception" result="error" />
+        </global-exception-mappings>
+
+        <action name="actionspecificexception" class="com.example.demo.controller.Register" method="throwSecurityException">
+            <exception-mapping exception="com.example.demo.SecurityBreachException" result="login" />
+            <result>/register.jsp</result>
+            <result name="login">/login.jsp</result>
+        </action>
+
         <action name="index">
             <result>/index.jsp</result>
         </action>

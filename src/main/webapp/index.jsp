@@ -7,6 +7,7 @@
   <title>Basic Struts 2 Application - Welcome</title>
 </head>
 <body>
+
 <h1>Welcome To Struts 2!</h1>
 <p><a href="<s:url action='hello'/>">Hello World</a></p>
 
@@ -15,7 +16,6 @@
   <s:param name="request_locale">pl</s:param>
 </s:url>
 <p><s:a href="%{registerInputLinkPl}">Proszę się zarejestrować</s:a></p>
-
 
 <s:url action="hello" var="helloLink">
   <s:param name="userName">Bruce Phillips</s:param>
@@ -32,7 +32,9 @@
 
 <s:url action="registerInput" var="registerInputLink" />
 <p><s:a href="%{registerInputLink}">Please register</s:a> for our prize drawing.</p>
+
 <hr />
 <s:text name="contact" />
+
 </body>
 </html>
