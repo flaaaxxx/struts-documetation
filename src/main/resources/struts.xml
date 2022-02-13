@@ -31,8 +31,24 @@
             <exception-mapping exception="java.lang.Exception" result="error" />
         </global-exception-mappings>
 
-        <action name="actionspecificexception" class="com.example.demo.controller.Register" method="throwSecurityException">
-            <exception-mapping exception="com.example.demo.SecurityBreachException" result="login" />
+        <action name="causesecurityexception" class="com.example.demo.controller.Register"
+                method="throwSecurityException">
+            <result>/register.jsp</result>
+        </action>
+
+        <action name="causeexception" class="com.example.demo.controller.Register" method="throwException">
+            <result>/register.jsp</result>
+        </action>
+
+        <action name="causenullpointerexception" class="com.example.demo.controller.Register"
+                method="throwNullPointerException">
+            <result>/register.jsp</result>
+        </action>
+
+        <action name="actionspecificexception" class="com.example.demo.controller.Register"
+                method="throwSecurityException">
+            <exception-mapping exception="com.example.demo.exception.SecurityBreachException"
+                               result="login"/>
             <result>/register.jsp</result>
             <result name="login">/login.jsp</result>
         </action>

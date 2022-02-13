@@ -16,7 +16,6 @@ public class Register extends ActionSupport {
     private Person personBean;
 
     public String execute() throws Exception {
-        throwException();
         return SUCCESS;
     }
 
